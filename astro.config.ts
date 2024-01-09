@@ -12,6 +12,8 @@ import { rehypeOptimizeStatic } from './plugins/rehype-optimize-static';
 import { rehypeTasklistEnhancer } from './plugins/rehype-tasklist-enhancer';
 import { remarkFallbackLang } from './plugins/remark-fallback-lang';
 
+import i18nHelper from "i18n-helper";
+
 /* https://vercel.com/docs/projects/environment-variables/system-environment-variables#system-environment-variables */
 const VERCEL_PREVIEW_SITE =
 	process.env.VERCEL_ENV !== 'production' &&
@@ -24,6 +26,7 @@ const site = VERCEL_PREVIEW_SITE || 'https://docs.astro.build/';
 export default defineConfig({
 	site,
 	integrations: [
+		i18nHelper(),
 		starlight({
 			title: 'Docs',
 			customCss: ['./src/styles/custom.css'],
