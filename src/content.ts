@@ -12,3 +12,5 @@ export const allPages = await getCollection('docs', (entry) => {
 export const tutorialPages = allPages.filter(isTutorialEntry);
 export const recipePages = allPages.filter(isRecipeEntry);
 export const englishPages = allPages.filter(isEnglishEntry);
+
+export const test = true;
